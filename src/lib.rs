@@ -1,3 +1,20 @@
+//! Some simple `BeforeMiddleware` to make using Iron behind a reverse proxy easier.
+//!
+//! ```
+//! # extern crate iron;
+//! # extern crate iron_reverse_proxy;
+//! # fn main() {
+//! use iron::prelude::*;
+//! # let handler = |req: &mut Request| {
+//! #   Ok(Response::new())
+//! # };
+//! let mut ch = Chain::new(handler);
+//! ch.link_before(iron_reverse_proxy::ReverseProxyMiddleware);
+//! # }
+//! ```
+//!
+//! And you're done. Works particularly well with [`router`](https://crates.io/crates/router)'s [`url_for!` macro](https://docs.rs/router/0.6.0/router/macro.url_for.html), as it depends on the `Request.url` property, which this middleware modifies.
+
 extern crate iron;
 #[cfg(test)]
 extern crate iron_test;
@@ -8,9 +25,17 @@ use iron::Url;
 use iron::BeforeMiddleware;
 use std::str;
 
+/// A `BeforeMiddleware` which checks common `X-Forwarded-*` headers and applies them to the request URL.
 pub struct ReverseProxyMiddleware;
 
 impl BeforeMiddleware for ReverseProxyMiddleware {
+    /// Check the request for the following request headers:
+    ///
+    /// * `X-Forwarded-Host`
+    /// * `X-Forwarded-Proto`
+    /// * `X-Forwarded-Port`
+    ///
+    /// If (and only if) `X-Forwarded-Host` is present, all present headers will be applied to the request URL.
     fn before(&self, req: &mut Request) -> IronResult<()> {
         if let Some(xfh) = req.headers.get_raw("x-forwarded-host") {
             let mut url: url::Url = req.url.clone().into();

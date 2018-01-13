@@ -13,7 +13,7 @@ extern crate iron_reverse_proxy;
 
 use iron::prelude::*;
 
-let ch = Chain::new();
+let mut ch = Chain::new();
 ch.link_before(iron_reverse_proxy::ReverseProxyMiddleware);
 ```
 
