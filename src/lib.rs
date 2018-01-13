@@ -1,8 +1,8 @@
 //! Some simple `BeforeMiddleware` to make using Iron behind a reverse proxy easier.
 //!
 //! ```
-//! # extern crate iron;
-//! # extern crate iron_reverse_proxy;
+//! extern crate iron;
+//! extern crate iron_reverse_proxy;
 //! # fn main() {
 //! use iron::prelude::*;
 //! # let handler = |req: &mut Request| {
