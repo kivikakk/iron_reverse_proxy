@@ -1,4 +1,8 @@
-# iron_reverse_proxy
+# iron_reverse_proxy [![Build Status](https://travis-ci.org/kivikakk/iron_reverse_proxy.svg?branch=master)](https://travis-ci.org/kivikakk/iron_reverse_proxy)
+
+- [Documentation](https://docs.rs/iron_reverse_proxy)
+- [Repository](https://github.com/kivikakk/iron_reverse_proxy)
+- [Crates.io](https://crates.io/crates/iron_reverse_proxy)
 
 Some simple `BeforeMiddleware` to make using Iron behind a reverse proxy easier.
 
