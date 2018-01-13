@@ -18,3 +18,7 @@ ch.link_before(iron_reverse_proxy::ReverseProxyMiddleware);
 ```
 
 And you're done. Works particularly well with [`router`](https://crates.io/crates/router)'s [`url_for!` macro](https://docs.rs/router/0.6.0/router/macro.url_for.html), as it depends on the `Request.url` property, which this middleware modifies.
+
+## License
+
+Licensed under the MIT, see `LICENSE`.
