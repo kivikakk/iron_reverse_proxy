@@ -3,6 +3,10 @@ name = "iron_reverse_proxy"
 version = "0.1.0"
 authors = ["Ashe Connor <ashe@kivikakk.ee>"]
 readme = "README.md"
+description = "BeforeMiddleware to handle being behind a reverse proxy in Iron. Supports X-Forwarded-Host, X-Forwarded-Port, X-Forwarded-Proto."
+license = "MIT"
+keywords = ["reverse", "proxy", "iron", "middleware", "x-forwarded-host"]
+categories = ["web-programming"]
 
 [dependencies]
 iron = "0.6"
