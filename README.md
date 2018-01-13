@@ -1,4 +1,4 @@
-# iron_reverse_proxy [![Build Status](https://travis-ci.org/kivikakk/iron_reverse_proxy.svg?branch=master)](https://travis-ci.org/kivikakk/iron_reverse_proxy)
+# iron_reverse_proxy [![crates.io version](https://img.shields.io/crates/v/iron_reverse_proxy.svg)](https://crates.io/crates/iron_reverse_proxy) [![Build Status](https://travis-ci.org/kivikakk/iron_reverse_proxy.svg?branch=master)](https://travis-ci.org/kivikakk/iron_reverse_proxy)
 
 - [Documentation](https://docs.rs/iron_reverse_proxy)
 - [Repository](https://github.com/kivikakk/iron_reverse_proxy)
