@@ -1,0 +1,12 @@
+[package]
+name = "iron_reverse_proxy"
+version = "0.1.0"
+authors = ["Ashe Connor <ashe@kivikakk.ee>"]
+readme = "README.md"
+
+[dependencies]
+iron = "0.6"
+url = "1.6"
+
+[dev-dependencies]
+iron-test = "0.6"
